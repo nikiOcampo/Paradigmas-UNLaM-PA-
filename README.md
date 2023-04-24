@@ -1,1 +1,1 @@
-# Parradigmas-UNLaM-PA-
+# Paradigmas-UNLaM-PA-
