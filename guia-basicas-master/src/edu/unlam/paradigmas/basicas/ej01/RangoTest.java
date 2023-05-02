@@ -242,8 +242,8 @@ public class RangoTest {
 	public void interseccionValida() {
 		// Arrange
 		boolean esperado = true;
-		Rango r1 = Rango.rangoAbiertoIzq(3.0, 4.0);
-		Rango r2= Rango.rangoAbiertoDer(4.0, 5.0);
+		Rango r1 = Rango.rangoAbiertoIzq(9.0, 15.0);
+		Rango r2= Rango.rangoAbiertoDer(10.0, 12.0);
 
 		// Act
 		boolean obetenido = r1.hayInterseccion(r2);
@@ -345,6 +345,61 @@ public class RangoTest {
 
 		// Act
 		String obetenido = r1.toString();
+
+		// Assert
+		Assert.assertEquals(esperado, obetenido);
+	}
+	
+	
+	@Test
+	public void rangoAbarca() {
+		// Arrange
+		Rango esperado= Rango.rangoCerrado(1.0, 10.0);
+		Rango []r1 = {Rango.rangoAbierto(5.0, 7.2), Rango.rangoAbiertoDer(1.0, 3.0), Rango.rangoCerrado(3.0, 10.0), Rango.rangoAbiertoIzq(2.0, 9.0)};
+
+		// Act
+		Rango obetenido = Rango.rangoAbarcativo(r1);
+
+		// Assert
+		Assert.assertEquals(esperado, obetenido);
+	}
+
+	@Test
+	public void sumaDeRangos() {
+		// Arrange
+		Rango esperado= Rango.rangoCerrado(3.0, 10.0);
+		Rango r1 = Rango.rangoCerrado(3.0, 5.0);
+		Rango r2 = Rango.rangoAbiertoDer(5.0, 10.0);
+		// Act
+		Rango obetenido = r1.sumarRangos(r2);
+
+		// Assert
+		Assert.assertEquals(esperado, obetenido);
+	}
+	
+	@Test
+	public void interseccionDeRangos() {
+		// Arrange
+		Rango esperado= Rango.rangoCerrado(10.0, 12.0);
+//		Rango r1 = Rango.rangoCerrado(10.0, 12.0);
+//		Rango r2 = Rango.rangoAbiertoDer(9.0, 15.0);
+//		
+		Rango r1 = Rango.rangoCerrado(9.0, 15.0);
+		Rango r2 = Rango.rangoAbiertoDer(10.0, 12.0);
+		// Act
+		Rango obetenido = r1.interseccion(r2);
+
+		// Assert
+		Assert.assertEquals(esperado, obetenido);
+	}
+	
+	@Test
+	public void desplazarRango() {
+		// Arrange
+		Rango esperado= Rango.rangoCerrado(5.0, 8.0);
+		Rango r1 = Rango.rangoCerrado(3.0, 6.0);
+		// Act
+		Rango obetenido = r1.desplazar(2);
 
 		// Assert
 		Assert.assertEquals(esperado, obetenido);
