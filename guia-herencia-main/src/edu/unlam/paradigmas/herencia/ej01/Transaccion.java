@@ -4,6 +4,7 @@ public class Transaccion {
 	private String motivo;
 	private double monto;
 	private Fecha fecha;
+	private Cuenta cuentaAsociada;
 	
 	
 	
