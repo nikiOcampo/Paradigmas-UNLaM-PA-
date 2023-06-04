@@ -1,7 +1,6 @@
 package edu.unlam.paradigmas.colecciones.ej06;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,7 +35,7 @@ public class Estudiante {
 	        Map<Double, List<String>> mapaInvertido = new HashMap<>();
 	        for (Map.Entry<String, List<Double>> entry : registro.entrySet()) {
 	            String nombre = entry.getKey();
-	            List<Double> notas = entry.getValue();
+	            //List<Double> notas = entry.getValue();
 	            double promedio = obtenerPromedio(nombre);
 	            List<String> estudiantes = mapaInvertido.getOrDefault(promedio, new ArrayList<>());
 	            estudiantes.add(nombre);

@@ -8,7 +8,7 @@ public class Resolucion {
 
 	public void resolver(String nombreArchivo){
 		
-		String nombreArchivo1 = "archivo.txt";
+		//String nombreArchivo1 = "archivo.txt";
         String nombreArchivo2;
 
         try (BufferedReader br = new BufferedReader(new FileReader(nombreArchivo))) {

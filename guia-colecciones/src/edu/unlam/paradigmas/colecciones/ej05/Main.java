@@ -41,7 +41,7 @@ public class Main {
 		int mesAver= consola.nextInt();
 		
 		System.out.println(venta.get(mesAver)); 
-		
+		consola.close();
 	}
 
 }

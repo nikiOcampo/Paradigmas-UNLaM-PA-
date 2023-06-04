@@ -23,7 +23,7 @@ public class Main {
 		for (String palabra : palabras) {
 			System.out.println(palabra);
 		}
-
+		consola.close();
 
 		
 	}

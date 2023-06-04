@@ -1,6 +1,5 @@
 package edu.unlam.paradigmas.colecciones.ej06;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -8,7 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Map<String,List<Double>> registroAlumnos=new HashMap<String,List<Double>>();
+		//Map<String,List<Double>> registroAlumnos=new HashMap<String,List<Double>>();
 		Estudiante registroEstudiantes = new Estudiante();
 		
 		registroEstudiantes.agregarNota("Juan", 8.5);
